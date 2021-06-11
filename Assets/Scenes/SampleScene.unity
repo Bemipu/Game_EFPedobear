@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 355805728}
   - component: {fileID: 355805729}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Pedo Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
