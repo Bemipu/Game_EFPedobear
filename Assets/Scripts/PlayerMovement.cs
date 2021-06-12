@@ -162,6 +162,9 @@ public class PlayerMovement : MonoBehaviour
         {
             readyToJump = false;
 
+            //slow donw (new)
+            rb.velocity = new Vector3(rb.velocity.x *0.5f,rb.velocity.y,rb.velocity.z*0.5f);
+
             //Add jump forces
             rb.AddForce(Vector2.up * jumpForce * 1.5f);
             rb.AddForce(normalVector * jumpForce * 0.5f);
