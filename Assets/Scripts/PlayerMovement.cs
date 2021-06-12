@@ -92,11 +92,17 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.localScale = crouchScale;
         transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+
+        Vector2 mag = FindVelRelativeToLook();
+
         if (rb.velocity.magnitude > 0.5f)
         {
             if (grounded)
             {
-                rb.AddForce(orientation.transform.forward * slideForce);
+                //slide whenever player want instead only forword!! (new)
+                //rb.AddForce(orientation.transform.forward * slideForce);
+                rb.AddForce(orientation.transform.right * mag.x * Time.deltaTime * slideForce);
+                rb.AddForce(orientation.transform.forward * mag.y * Time.deltaTime * slideForce);
             }
         }
     }
