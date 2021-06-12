@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (grounded)
             {
-                //slide whenever player want instead only forword!! (new)
+                //slide wherever player want instead only forword!! (new)
                 //rb.AddForce(orientation.transform.forward * slideForce);
                 rb.AddForce(orientation.transform.right * mag.x * Time.deltaTime * slideForce);
                 rb.AddForce(orientation.transform.forward * mag.y * Time.deltaTime * slideForce);
