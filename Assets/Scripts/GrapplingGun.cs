@@ -11,6 +11,15 @@ public class GrapplingGun : MonoBehaviour
     public Transform gunTip, camera, player;
     private float maxDistance = 100f;
     private SpringJoint joint;
+    private float nowTime;
+    private float time_s = 0f;
+    private bool isGrappling;
+    public float duration = 5f;
+
+    private void Start()
+    {
+        isGrappling = false;
+    }
 
     void Awake()
     {
@@ -19,13 +28,23 @@ public class GrapplingGun : MonoBehaviour
 
     void Update()
     {
+        TimerForGrapple();
+        if (isGrappling){
+            GameObject.Find("Player").GetComponent<Rigidbody>().AddForce(this.transform.forward * Time.deltaTime * 1500);
+            GameObject.Find("Player").GetComponent<Rigidbody>().AddForce(camera.forward * Time.deltaTime * 500);
+        }
+        if (time_s >= duration) {
+            StopGrapple();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             StartGrapple();
+            
         }
         else if (Input.GetMouseButtonUp(0))
         {
             StopGrapple();
+            
         }
     }
 
@@ -40,6 +59,7 @@ public class GrapplingGun : MonoBehaviour
     /// </summary>
     void StartGrapple()
     {
+        isGrappling = true;
         RaycastHit hit;
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable))
         {
@@ -61,6 +81,8 @@ public class GrapplingGun : MonoBehaviour
 
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
+
+            
         }
     }
 
@@ -72,6 +94,7 @@ public class GrapplingGun : MonoBehaviour
     {
         lr.positionCount = 0;
         Destroy(joint);
+        isGrappling = false;
     }
 
     private Vector3 currentGrapplePosition;
@@ -96,4 +119,18 @@ public class GrapplingGun : MonoBehaviour
     {
         return grapplePoint;
     }
+
+    public void TimerForGrapple()
+    {
+        if (!isGrappling)
+        {
+            time_s = 0f;
+        }
+        else
+        {
+            time_s += Time.deltaTime;
+        }
+
+    }
+
 }
