@@ -97,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.magnitude > 0.5f)
         {
+            GameObject.Find("Player").GetComponent<CapsuleCollider>().material = GameObject.Find("IceObject").GetComponent<CapsuleCollider>().material;
             if (grounded)
             {
                 //slide wherever player want instead only forword!! (new)
@@ -109,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopCrouch()
     {
+        GameObject.Find("Player").GetComponent<CapsuleCollider>().material = null;
         transform.localScale = playerScale;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
     }

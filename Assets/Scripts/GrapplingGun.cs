@@ -29,10 +29,12 @@ public class GrapplingGun : MonoBehaviour
     void Update()
     {
         TimerForGrapple();
+
         if (isGrappling){
             GameObject.Find("Player").GetComponent<Rigidbody>().AddForce(this.transform.forward * Time.deltaTime * 1500);
             GameObject.Find("Player").GetComponent<Rigidbody>().AddForce(camera.forward * Time.deltaTime * 500);
         }
+        
         if (time_s >= duration) {
             StopGrapple();
         }
