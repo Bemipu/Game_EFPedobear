@@ -45,6 +45,8 @@
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\Scripts\GrapplingGun.cs" />
+     <Compile Include="Assets\Scripts\HelloWorldManager.cs" />
+     <Compile Include="Assets\Scripts\HelloWorldPlayer.cs" />
      <Compile Include="Assets\Scripts\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\PedoAnim.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -234,6 +236,9 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+        <HintPath>D:/Unity/Project/21final/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.1-preview.1/Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -624,6 +629,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.MLAPI.Runtime">
+        <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/Unity.Multiplayer.MLAPI.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.MLAPI.Prototyping">
+        <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/Unity.Multiplayer.MLAPI.Prototyping.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

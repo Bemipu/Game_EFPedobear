@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602859393304187520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0.19}
-  m_LocalScale: {x: 0.6712403, y: 0.23307, z: 0.66240007}
+  m_LocalPosition: {x: -0, y: -0.996, z: 0.175}
+  m_LocalScale: {x: 0.7, y: 0.1, z: 0.7}
   m_Children: []
   m_Father: {fileID: 602859394703485171}
   m_RootOrder: 0
@@ -89,7 +89,7 @@ BoxCollider:
   m_GameObject: {fileID: 602859393304187520}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -121,10 +121,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602859393363755685}
-  m_LocalRotation: {x: 0.0000000049221853, y: -0.0000062730714, z: 0.00000009109499,
-    w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.568036, y: 2.9871516, z: 8.079788}
-  m_LocalScale: {x: 0.5557392, y: 0.78117234, z: 0.486}
+  m_LocalScale: {x: 1, y: 0.8, z: 1}
   m_Children:
   - {fileID: 602859394703485171}
   - {fileID: 602859394339223293}
@@ -222,17 +221,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCam: {fileID: 0}
   orientation: {fileID: 602859394703485171}
-  moveSpeed: 2000
-  maxSpeed: 15
+  moveSpeed: 1500
+  maxSpeed: 5
   grounded: 1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8192
   counterMovement: 0.175
-  maxSlopeAngle: 35
-  slideForce: 500
+  maxSlopeAngle: 45
+  slideForce: 750
   slideCounterMovement: 0.2
-  jumpForce: 500
+  jumpForce: 150
 --- !u!1 &602859394339223292
 GameObject:
   m_ObjectHideFlags: 0
