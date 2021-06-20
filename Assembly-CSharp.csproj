@@ -45,9 +45,10 @@
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\Scripts\GrapplingGun.cs" />
-     <Compile Include="Assets\Scripts\HelloWorldManager.cs" />
-     <Compile Include="Assets\Scripts\HelloWorldPlayer.cs" />
      <Compile Include="Assets\Scripts\MoveCamera.cs" />
+     <Compile Include="Assets\Scripts\NWTEST\HelloWorldManager.cs" />
+     <Compile Include="Assets\Scripts\NWTEST\HelloWorldPlayer.cs" />
+     <Compile Include="Assets\Scripts\NetworkCommandLine.cs" />
      <Compile Include="Assets\Scripts\PedoAnim.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\RotateGun.cs" />
@@ -621,20 +622,20 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Multiplayer.MLAPI.Runtime">
+        <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/Unity.Multiplayer.MLAPI.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
         <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Multiplayer.MLAPI.Runtime">
-        <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/Unity.Multiplayer.MLAPI.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Multiplayer.MLAPI.Prototyping">
         <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/Unity.Multiplayer.MLAPI.Prototyping.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>D:/Unity/Project/21final/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

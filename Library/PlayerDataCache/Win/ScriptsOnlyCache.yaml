@@ -1,8 +1,18 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp-firstpass.dll:
+    - UnityStandardAssets.Characters.ThirdPerson.AICharacterControl
+    - UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter
     Assembly-CSharp.dll:
-    - HelloWorld.HelloWorldManager
-    - HelloWorld.HelloWorldPlayer
+    - GrapplingGun
+    - MoveCamera
+    - NetworkCommandLine
+    - PedoAnim
+    - PlayerMovement
+    - RotateGun
+    - SpriteFacing
+    Unity.Multiplayer.MLAPI.Prototyping.dll:
+    - MLAPI.Prototyping.NetworkTransform
     Unity.Multiplayer.MLAPI.Runtime.dll:
     - MLAPI.NetworkManager
     - MLAPI.NetworkObject
@@ -22,8 +32,12 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/NWHelloWorld.unity:
+    Assets/Scenes/SampleScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -42,31 +56,91 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 19654}
+      Script: {instanceID: 11332}
     - Class: 114
-      Script: {instanceID: 19670}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 19756}
+      Script: {instanceID: 11500}
     - Class: 114
-      Script: {instanceID: 21306}
+      Script: {instanceID: 11524}
     - Class: 114
-      Script: {instanceID: 21484}
+      Script: {instanceID: 12044}
+    - Class: 114
+      Script: {instanceID: 12258}
+    - Class: 114
+      Script: {instanceID: 12326}
+    - Class: 114
+      Script: {instanceID: 12490}
+    - Class: 114
+      Script: {instanceID: 12532}
+    - Class: 114
+      Script: {instanceID: 12604}
+    - Class: 114
+      Script: {instanceID: 12938}
+    - Class: 114
+      Script: {instanceID: 13626}
+    - Class: 114
+      Script: {instanceID: 13728}
+    - Class: 114
+      Script: {instanceID: 13962}
+    - Class: 114
+      Script: {instanceID: 14202}
+    - Class: 114
+      Script: {instanceID: 25684}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 120
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 134
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
+    - Class: 195
+      Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
+      Script: {instanceID: 0}
+    - Class: 258
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -177,6 +251,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Characters.FirstPerson
     className: FirstPersonController
+  - hash:
+      serializedVersion: 2
+      Hash: 34432c2a124a26f51569ac01fc6fcc4a
+    assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
+    namespaceName: MLAPI.Transports.Multiplex
+    className: MultiplexTransportAdapter
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -455,6 +535,12 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 92c925065729a59f7aebc05ba0b61b4e
+    assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
+    namespaceName: MLAPI
+    className: NetworkManager
+  - hash:
+      serializedVersion: 2
       Hash: d67515fd6babd339b8727dc35ae03966
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Vehicles.Aeroplane
@@ -497,6 +583,12 @@ ScriptsOnlyBuild:
     className: Joystick
   - hash:
       serializedVersion: 2
+      Hash: 5c8c09a17c088d57aaf2517819e28ac3
+    assemblyName: Unity.Multiplayer.MLAPI.Prototyping.dll
+    namespaceName: MLAPI.Prototyping
+    className: NetworkNavMeshAgent
+  - hash:
+      serializedVersion: 2
       Hash: 4f631fd718256a8c69483c396671a274
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
@@ -513,6 +605,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: f7146d2a788941d4057c932bf1e6abc2
+    assemblyName: Unity.Multiplayer.MLAPI.Prototyping.dll
+    namespaceName: MLAPI.Prototyping
+    className: NetworkTransform
   - hash:
       serializedVersion: 2
       Hash: 0574135745ea880aa1c1be2f2057ab89
@@ -543,6 +641,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets._2D
     className: CameraFollow
+  - hash:
+      serializedVersion: 2
+      Hash: e7182e6d337b73771f0d7b32eb22e341
+    assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
+    namespaceName: MLAPI
+    className: NetworkObject
   - hash:
       serializedVersion: 2
       Hash: f03168bb2f3505e6cc0ba61aff5d31ab
@@ -725,6 +829,12 @@ ScriptsOnlyBuild:
     className: FreeLookCam
   - hash:
       serializedVersion: 2
+      Hash: 3c945a9519f410395cc6272d6fcb8045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: HelloWorld
+    className: HelloWorldPlayer
+  - hash:
+      serializedVersion: 2
       Hash: 2294ba4929e515b4b46046eff1f6b057
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Effects
@@ -881,6 +991,12 @@ ScriptsOnlyBuild:
     className: MenuSceneLoader
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: HelloWorld
+    className: HelloWorldManager
+  - hash:
+      serializedVersion: 2
       Hash: ae63a04417e46d3aad240f8084026fa3
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
@@ -1001,6 +1117,12 @@ ScriptsOnlyBuild:
     className: GerstnerDisplace
   - hash:
       serializedVersion: 2
+      Hash: e6ca246af0c7e2f2a02be97085c4a2c9
+    assemblyName: Unity.Multiplayer.MLAPI.Prototyping.dll
+    namespaceName: MLAPI.Prototyping
+    className: NetworkAnimator
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1011,6 +1133,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Effects
     className: Explosive
+  - hash:
+      serializedVersion: 2
+      Hash: 5860c479e1d84a9fb5e9a040e4376e41
+    assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
+    namespaceName: MLAPI.Transports.UNET
+    className: UNetTransport
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -1139,59 +1267,11 @@ ScriptsOnlyBuild:
     className: AutoMobileShaderSwitch
   - hash:
       serializedVersion: 2
-      Hash: 34432c2a124a26f51569ac01fc6fcc4a
-    assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
-    namespaceName: MLAPI.Transports.Multiplex
-    className: MultiplexTransportAdapter
-  - hash:
-      serializedVersion: 2
-      Hash: 92c925065729a59f7aebc05ba0b61b4e
-    assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
-    namespaceName: MLAPI
-    className: NetworkManager
-  - hash:
-      serializedVersion: 2
-      Hash: 5c8c09a17c088d57aaf2517819e28ac3
-    assemblyName: Unity.Multiplayer.MLAPI.Prototyping.dll
-    namespaceName: MLAPI.Prototyping
-    className: NetworkNavMeshAgent
-  - hash:
-      serializedVersion: 2
-      Hash: f7146d2a788941d4057c932bf1e6abc2
-    assemblyName: Unity.Multiplayer.MLAPI.Prototyping.dll
-    namespaceName: MLAPI.Prototyping
-    className: NetworkTransform
-  - hash:
-      serializedVersion: 2
-      Hash: e7182e6d337b73771f0d7b32eb22e341
-    assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
-    namespaceName: MLAPI
-    className: NetworkObject
-  - hash:
-      serializedVersion: 2
-      Hash: e6ca246af0c7e2f2a02be97085c4a2c9
-    assemblyName: Unity.Multiplayer.MLAPI.Prototyping.dll
-    namespaceName: MLAPI.Prototyping
-    className: NetworkAnimator
-  - hash:
-      serializedVersion: 2
-      Hash: 5860c479e1d84a9fb5e9a040e4376e41
-    assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
-    namespaceName: MLAPI.Transports.UNET
-    className: UNetTransport
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: HelloWorld
-    className: HelloWorldManager
-  - hash:
-      serializedVersion: 2
-      Hash: 3c945a9519f410395cc6272d6fcb8045
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: HelloWorld
-    className: HelloWorldPlayer
+    namespaceName: 
+    className: NetworkCommandLine
   platform: 5
   scenePathNames:
-  - Assets/Scenes/NWHelloWorld.unity
-  playerPath: D:/Unity/Project/21final/21final.exe
+  - Assets/Scenes/SampleScene.unity
+  playerPath: D:/Unity/Project/21final/Test/21final.exe

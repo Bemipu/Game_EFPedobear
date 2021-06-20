@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using MLAPI;
+using MLAPI.NetworkVariable;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
 
     //Assingables
@@ -49,26 +51,34 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        if (IsClient)rb = GetComponent<Rigidbody>();
     }
 
     void Start()
     {
-        playerScale = transform.localScale;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (IsClient){
+            playerScale = transform.localScale;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            transform.position = new Vector3(transform.position.x, 5f, transform.position.z);
+        }
     }
 
 
     private void FixedUpdate()
     {
-        Movement();
+        if (IsClient){
+            Movement();
+        }
     }
 
     private void Update()
     {
-        MyInput();
-        Look();
+        if (IsClient){
+            MyInput();
+            Look();
+        }
     }
 
     /// <summary>
@@ -97,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.magnitude > 0.5f)
         {
-            GameObject.Find("Player").GetComponent<CapsuleCollider>().material = GameObject.Find("IceObject").GetComponent<CapsuleCollider>().material;
+            this.GetComponent<CapsuleCollider>().material = GameObject.Find("IceObject").GetComponent<CapsuleCollider>().material;
             if (grounded)
             {
                 //slide wherever player want instead only forword!! (new)
@@ -110,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopCrouch()
     {
-        GameObject.Find("Player").GetComponent<CapsuleCollider>().material = null;
+        this.GetComponent<CapsuleCollider>().material = null;
         transform.localScale = playerScale;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
     }
