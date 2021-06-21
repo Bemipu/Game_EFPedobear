@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAPI;
 
-public class GrapplingGun : MonoBehaviour
+public class GrapplingGun : NetworkBehaviour
 {
 
     private LineRenderer lr;
     private Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
     public Transform gunTip, camera, player;
+    public Rigidbody player_rb;
     private float maxDistance = 100f;
     private SpringJoint joint;
     private float nowTime;
@@ -28,25 +30,27 @@ public class GrapplingGun : MonoBehaviour
 
     void Update()
     {
-        TimerForGrapple();
+        if(IsLocalPlayer){
+            TimerForGrapple();
 
-        if (isGrappling){
-            GameObject.Find("Player").GetComponent<Rigidbody>().AddForce(this.transform.forward * Time.deltaTime * 1500);
-            GameObject.Find("Player").GetComponent<Rigidbody>().AddForce(camera.forward * Time.deltaTime * 500);
-        }
-        
-        if (time_s >= duration) {
-            StopGrapple();
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartGrapple();
+            if (isGrappling){
+                player_rb.AddForce(this.transform.forward * Time.deltaTime * 1500);
+                player_rb.AddForce(camera.forward * Time.deltaTime * 500);
+            }
             
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            StopGrapple();
-            
+            if (time_s >= duration) {
+                StopGrapple();
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartGrapple();
+                
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                StopGrapple();
+                
+            }
         }
     }
 

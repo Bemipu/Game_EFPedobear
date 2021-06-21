@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class RotateGun : MonoBehaviour
+using MLAPI;
+public class RotateGun : NetworkBehaviour
 {
 
     public GrapplingGun grappling;

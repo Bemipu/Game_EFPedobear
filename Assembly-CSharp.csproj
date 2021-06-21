@@ -48,12 +48,14 @@
      <Compile Include="Assets\Scripts\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\NWTEST\HelloWorldManager.cs" />
      <Compile Include="Assets\Scripts\NWTEST\HelloWorldPlayer.cs" />
+     <Compile Include="Assets\Scripts\NetworkCam.cs" />
      <Compile Include="Assets\Scripts\NetworkCommandLine.cs" />
      <Compile Include="Assets\Scripts\PedoAnim.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\RotateGun.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Scripts\SpriteFacing.cs" />
+     <Compile Include="Assets\Scripts\getMainplayer.cs" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

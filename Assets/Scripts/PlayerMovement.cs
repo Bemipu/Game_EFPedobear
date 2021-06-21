@@ -100,7 +100,7 @@ public class PlayerMovement : NetworkBehaviour
 
     private void StartCrouch()
     {
-        transform.localScale = crouchScale;
+        if(IsLocalPlayer)transform.localScale = crouchScale;
         transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
 
         Vector2 mag = FindVelRelativeToLook();
@@ -121,7 +121,7 @@ public class PlayerMovement : NetworkBehaviour
     private void StopCrouch()
     {
         this.GetComponent<CapsuleCollider>().material = null;
-        transform.localScale = playerScale;
+        if(IsLocalPlayer)transform.localScale = playerScale;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
     }
 

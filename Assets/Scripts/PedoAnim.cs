@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAPI;
 
-public class PedoAnim : MonoBehaviour
+public class PedoAnim : NetworkBehaviour
 {
     float timer = 0.0f;
     void Update()

@@ -6,20 +6,19 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - GrapplingGun
     - MoveCamera
+    - NetworkCam
     - NetworkCommandLine
     - PedoAnim
     - PlayerMovement
     - RotateGun
     - SpriteFacing
+    - getMainplayer
     Unity.Multiplayer.MLAPI.Prototyping.dll:
     - MLAPI.Prototyping.NetworkTransform
     Unity.Multiplayer.MLAPI.Runtime.dll:
     - MLAPI.NetworkManager
     - MLAPI.NetworkObject
     - MLAPI.Transports.UNET.UNetTransport
-    Unity.ProBuilder.Editor.dll:
-    - UnityEditor.ProBuilder.EditorToolbar
-    - UnityEditor.ProBuilder.ProBuilderEditor
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -110,6 +109,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14202}
     - Class: 114
       Script: {instanceID: 25684}
+    - Class: 114
+      Script: {instanceID: 50934}
+    - Class: 114
+      Script: {instanceID: 55470}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -451,7 +454,7 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
-      Hash: 7e775d4eec1159292aee38bda10ddf32
+      Hash: 2e38aade4ccc88be87ce5ce3ee571086
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpriteFacing
@@ -505,7 +508,7 @@ ScriptsOnlyBuild:
     className: CarUserControl
   - hash:
       serializedVersion: 2
-      Hash: 45514918f1135deb2c3a23186a7ac7d8
+      Hash: 98374a7a249f2aa6d29f0241fbabc8f9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GrapplingGun
@@ -1271,6 +1274,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkCommandLine
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NetworkCam
+  - hash:
+      serializedVersion: 2
+      Hash: e6ccecf9b5303b6b3cbad31cfc2b6af7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: getMainplayer
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

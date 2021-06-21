@@ -10,18 +10,21 @@ Direct3D:
     VRAM:     3072 MB
     Driver:   27.21.14.6627
 Begin MonoManager ReloadAssembly
-- Completed reload, in  0.121 seconds
+- Completed reload, in  0.137 seconds
 D3D11 device created for Microsoft Media Foundation video decoding.
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.923900 ms
+UnloadTime: 1.050900 ms
+Attempt to send to not connected connection {1} 
+(Filename:  Line: 376)
+
 Setting up 8 worker threads for Enlighten.
-  Thread -> id: 8080 -> priority: 1 
-  Thread -> id: 66f4 -> priority: 1 
-  Thread -> id: 3ce0 -> priority: 1 
-  Thread -> id: 30e8 -> priority: 1 
-  Thread -> id: 7650 -> priority: 1 
-  Thread -> id: 530c -> priority: 1 
-  Thread -> id: 5458 -> priority: 1 
-  Thread -> id: 3584 -> priority: 1 
+  Thread -> id: 8574 -> priority: 1 
+  Thread -> id: 6d80 -> priority: 1 
+  Thread -> id: 8444 -> priority: 1 
+  Thread -> id: 8014 -> priority: 1 
+  Thread -> id: 95f8 -> priority: 1 
+  Thread -> id: 5d98 -> priority: 1 
+  Thread -> id: 94a4 -> priority: 1 
+  Thread -> id: 87fc -> priority: 1 
