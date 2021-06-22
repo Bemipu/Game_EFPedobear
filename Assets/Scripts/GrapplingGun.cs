@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MLAPI;
+using MLAPI.Messaging;
+using MLAPI.NetworkVariable;
 
 public class GrapplingGun : NetworkBehaviour
 {
@@ -18,6 +20,14 @@ public class GrapplingGun : NetworkBehaviour
     private bool isGrappling;
     public float duration = 5f;
 
+    /*
+    NetworkVariable<LineRenderer> nlr = new NetworkVariable<LineRenderer>(new NetworkVariableSettings{WritePermission = NetworkVariablePermission.Everyone});
+    //grapplePoint, gunTip.position, currentGrapplePosition
+    NetworkVariableVector3 gP = new NetworkVariableVector3(new NetworkVariableSettings{WritePermission = NetworkVariablePermission.OwnerOnly});
+    NetworkVariableVector3 gT = new NetworkVariableVector3(new NetworkVariableSettings{WritePermission = NetworkVariablePermission.OwnerOnly});
+    NetworkVariableVector3 cGP = new NetworkVariableVector3(new NetworkVariableSettings{WritePermission = NetworkVariablePermission.OwnerOnly,});
+    */
+
     private void Start()
     {
         isGrappling = false;
@@ -30,14 +40,14 @@ public class GrapplingGun : NetworkBehaviour
 
     void Update()
     {
-        if(IsLocalPlayer){
-            TimerForGrapple();
+        TimerForGrapple();
 
-            if (isGrappling){
-                player_rb.AddForce(this.transform.forward * Time.deltaTime * 1500);
-                player_rb.AddForce(camera.forward * Time.deltaTime * 500);
-            }
-            
+        if (isGrappling && IsLocalPlayer){
+            player_rb.AddForce(this.transform.forward * Time.deltaTime * 1000);
+            player_rb.AddForce(camera.forward * Time.deltaTime * 0.5f);
+        }
+        
+        if(IsLocalPlayer){
             if (time_s >= duration) {
                 StopGrapple();
             }
@@ -57,8 +67,23 @@ public class GrapplingGun : NetworkBehaviour
     //Called after Update
     void LateUpdate()
     {
-        DrawRope();
+        if(IsLocalPlayer)DrawRope();
     }
+
+    /*
+    [ServerRpc]
+    void SGServerRpc(){
+        cGP.Value = Vector3.Lerp(cGP.Value, gP.Value, Time.deltaTime * 8f);
+
+        nlr.Value.SetPosition(0, gT.Value);
+        nlr.Value.SetPosition(1, cGP.Value);
+    }
+
+    void STGServerRpc(){
+        nlr.Value.positionCount = 0;
+    }
+
+    */
 
     /// <summary>
     /// Call whenever we want to start a grapple
@@ -70,8 +95,8 @@ public class GrapplingGun : NetworkBehaviour
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable))
         {
             isGrappling = true;
-            
-            grapplePoint = hit.point;
+
+            grapplePoint = hit.point;//
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = grapplePoint;
@@ -88,9 +113,13 @@ public class GrapplingGun : NetworkBehaviour
             joint.massScale = 4.5f;
 
             lr.positionCount = 2;
-            currentGrapplePosition = gunTip.position;
+            currentGrapplePosition = gunTip.position;//
 
-            
+            /*
+            gP.Value = grapplePoint; gT.Value = gunTip.position; cGP.Value = currentGrapplePosition;
+            SGServerRpc();
+            */
+
         }
     }
 

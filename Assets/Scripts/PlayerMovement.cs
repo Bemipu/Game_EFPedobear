@@ -162,8 +162,10 @@ public class PlayerMovement : NetworkBehaviour
         // Movement in air
         if (!grounded)
         {
-            multiplier = 0.5f;
-            multiplierV = 0.5f;
+            //multiplier = 0.5f;
+            //multiplierV = 0.5f;
+            x = x*0.625f;
+            y = y*0.625f;
         }
 
         // Movement while sliding

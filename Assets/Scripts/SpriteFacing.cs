@@ -21,8 +21,8 @@ public class SpriteFacing : NetworkBehaviour
             cam_pos.position = new Vector3(target.transform.position.x,transform.position.y,target.transform.position.z);
             transform.LookAt(cam_pos);
         }else{
-            if(source.GetComponent<getMainplayer>().mainplayer != null){
-                target = source.GetComponent<getMainplayer>().mainplayer;
+            if(source.GetComponent<playerlist>().lastplayer != null){
+                target = source.GetComponent<playerlist>().lastplayer;
             }
         }
     }

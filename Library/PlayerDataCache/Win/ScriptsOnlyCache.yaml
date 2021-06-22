@@ -12,21 +12,28 @@ ScriptsOnlyBuild:
     - PedoAnim
     - PlayerMovement
     - RotateGun
+    - SearchingTarget
     - SpriteFacing
-    - getMainplayer
+    - player
+    - playerlist
     Unity.Multiplayer.MLAPI.Prototyping.dll:
     - MLAPI.Prototyping.NetworkTransform
     Unity.Multiplayer.MLAPI.Runtime.dll:
     - MLAPI.NetworkManager
     - MLAPI.NetworkObject
     - MLAPI.Transports.UNET.UNetTransport
+    Unity.ProBuilder.Editor.dll:
+    - UnityEditor.ProBuilder.EditorToolbar
+    - UnityEditor.ProBuilder.ProBuilderEditor
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -91,8 +98,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12050}
     - Class: 114
-      Script: {instanceID: 12118}
-    - Class: 114
       Script: {instanceID: 12262}
     - Class: 114
       Script: {instanceID: 12330}
@@ -116,6 +121,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14208}
     - Class: 114
       Script: {instanceID: 26660}
+    - Class: 114
+      Script: {instanceID: 50786}
+    - Class: 114
+      Script: {instanceID: 50792}
+    - Class: 114
+      Script: {instanceID: 54400}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -473,12 +484,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
-  - hash:
-      serializedVersion: 2
-      Hash: e6ccecf9b5303b6b3cbad31cfc2b6af7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: getMainplayer
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -1295,7 +1300,25 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Connection
     className: Connection
+  - hash:
+      serializedVersion: 2
+      Hash: 6748dad00066e9c6a67455d394efbf35
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: playerlist
+  - hash:
+      serializedVersion: 2
+      Hash: adf56fdd74d62c5edb44c76d17033691
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: player
+  - hash:
+      serializedVersion: 2
+      Hash: 1e26e8519bcedbdcbe356869d042fb46
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SearchingTarget
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Unity/Project/21final/nt/21final.exe
+  playerPath: C:/Users/Bemip/Desktop/nt/21final.exe
