@@ -4,6 +4,10 @@
 
 ## version change
 
+### phototype v2.4
+* able to connect through MLAPI (we got interface to choose IP address)
+* lots minor fix and turn lots stuff into network object
+
 ### phototype v2.2
 * implement AI drop form edge, but it works not well.
 * now player can slide wherever they want instead of forward.

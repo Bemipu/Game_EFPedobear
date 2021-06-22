@@ -13,6 +13,10 @@ public class NetworkCam : NetworkBehaviour
             this.GetComponent<AudioListener>().enabled = true;
         }
         GameObject.Find("GetTarget").GetComponent<getMainplayer>().getTarget(this.gameObject);
+
+        //testing
+        Debug.Log(NetworkManager.Singleton.LocalClientId);
+        NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.position = new Vector3(10,10,10);
     }
 
     // Update is called once per frame

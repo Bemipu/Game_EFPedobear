@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - UnityStandardAssets.Characters.ThirdPerson.AICharacterControl
     - UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter
     Assembly-CSharp.dll:
+    - Connection.Connection
     - GrapplingGun
     - MoveCamera
     - NetworkCam
@@ -88,31 +89,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12044}
     - Class: 114
-      Script: {instanceID: 12258}
+      Script: {instanceID: 12050}
     - Class: 114
-      Script: {instanceID: 12326}
+      Script: {instanceID: 12118}
     - Class: 114
-      Script: {instanceID: 12490}
+      Script: {instanceID: 12262}
     - Class: 114
-      Script: {instanceID: 12532}
+      Script: {instanceID: 12330}
     - Class: 114
-      Script: {instanceID: 12604}
+      Script: {instanceID: 12494}
     - Class: 114
-      Script: {instanceID: 12938}
+      Script: {instanceID: 12536}
     - Class: 114
-      Script: {instanceID: 13626}
+      Script: {instanceID: 12608}
     - Class: 114
-      Script: {instanceID: 13728}
+      Script: {instanceID: 12942}
     - Class: 114
-      Script: {instanceID: 13962}
+      Script: {instanceID: 13630}
     - Class: 114
-      Script: {instanceID: 14202}
+      Script: {instanceID: 13732}
     - Class: 114
-      Script: {instanceID: 25684}
+      Script: {instanceID: 13966}
     - Class: 114
-      Script: {instanceID: 50934}
+      Script: {instanceID: 14146}
     - Class: 114
-      Script: {instanceID: 55470}
+      Script: {instanceID: 14208}
+    - Class: 114
+      Script: {instanceID: 26660}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -460,10 +463,22 @@ ScriptsOnlyBuild:
     className: SpriteFacing
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NetworkCam
+  - hash:
+      serializedVersion: 2
       Hash: 1103fb0758976355cdf9b7d5ce9cb7e0
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: e6ccecf9b5303b6b3cbad31cfc2b6af7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: getMainplayer
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -1156,6 +1171,12 @@ ScriptsOnlyBuild:
     className: WaterTile
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NetworkCommandLine
+  - hash:
+      serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1272,21 +1293,9 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NetworkCommandLine
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NetworkCam
-  - hash:
-      serializedVersion: 2
-      Hash: e6ccecf9b5303b6b3cbad31cfc2b6af7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: getMainplayer
+    namespaceName: Connection
+    className: Connection
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Unity/Project/21final/Test/21final.exe
+  playerPath: D:/Unity/Project/21final/nt/21final.exe
