@@ -9,7 +9,7 @@ public class NetworkCam : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.parent.gameObject.transform.parent.GetChild(0).gameObject.transform.position = new Vector3(0, -20, 0);
+        this.transform.parent.gameObject.transform.parent.GetChild(0).gameObject.transform.position = new Vector3(0, -220, 0);
         //testing
         //Debug.Log(NetworkManager.Singleton.LocalClientId);
         //NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.position = new Vector3(10,10,10);

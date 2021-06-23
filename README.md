@@ -4,6 +4,9 @@
 
 ## version change
 
+### phototype v3.0
+* lots of gameplay are implemented.
+
 ### phototype v2.4
 * able to connect through MLAPI (we got interface to choose IP address)
 * lots minor fix and turn lots stuff into network object

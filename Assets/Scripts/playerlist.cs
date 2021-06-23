@@ -6,6 +6,7 @@ public class playerlist : NetworkBehaviour
 {
     public int playermax;
     public List<GameObject> plistGO = new List<GameObject>();
+    public List<string> Namelist = new List<string>();
     public GameObject lastplayer;
     void Start()
     {

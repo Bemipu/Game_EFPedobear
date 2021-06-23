@@ -246,7 +246,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 825d2ca77a761e1ecc809842ff317a50
     assemblyName: Assembly-CSharp.dll
     namespaceName: Connection
     className: Connection
@@ -468,7 +468,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 6748dad00066e9c6a67455d394efbf35
+      Hash: 1a454e053fa70adddf2374558d4c652c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: playerlist
@@ -1320,7 +1320,7 @@ ScriptsOnlyBuild:
     className: AutoMobileShaderSwitch
   - hash:
       serializedVersion: 2
-      Hash: a041248f458b7b439238433086a6e09d
+      Hash: 0f1ab7ebab019c2b6b69020e2da1ff99
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
