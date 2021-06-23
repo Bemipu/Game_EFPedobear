@@ -62,8 +62,9 @@ public class GameManager : NetworkBehaviour
             }
             if(respawnTimer > pbSpawnRate && pbSpawned < 10){
                 respawnTimer = 0f;
-                pbSpawn(pbSpawned);
-                pbSpawnClientRpc(pbSpawned);
+                int rand = Random.Range(0,9);
+                pbSpawn(pbSpawned,rand);
+                pbSpawnClientRpc(pbSpawned,rand);
                 pbSpawned++;
             }
             if(speedUpTimer > pbSpawnRate){
@@ -79,7 +80,7 @@ public class GameManager : NetworkBehaviour
         alive = new List<bool>();
         for(int i=0;i<this.gameObject.GetComponent<playerlist>().playermax;i++){  // turn on player's camera
             this.gameObject.GetComponent<playerlist>().plistGO[i].GetComponent<NetworkCam>().TOCamClientRpc();
-            this.gameObject.GetComponent<playerlist>().plistGO[i].GetComponent<NetworkCam>().MoveToClientRpc(new Vector3(0, 10, 0));
+            this.gameObject.GetComponent<playerlist>().plistGO[i].GetComponent<NetworkCam>().MoveToClientRpc(new Vector3(Random.Range(-10,11), 10, Random.Range(-10,11)));
             alive.Add(true);
         }
         livePlayer = this.gameObject.GetComponent<playerlist>().playermax;
@@ -90,16 +91,16 @@ public class GameManager : NetworkBehaviour
         begin = true;
     }
 
-    private void pbSpawn(int id){
-        pb[id].transform.position = pbSP[0].transform.position;
+    private void pbSpawn(int id,int index){
+        pb[id].transform.position = pbSP[index].transform.position;
         
         pb[id].GetComponent<AICharacterControl>().enabled = true;
         pb[id].GetComponent<NavMeshAgent>().enabled = true;
     }
 
     [ClientRpc]
-    private void pbSpawnClientRpc(int id){
-        pb[id].transform.position = pbSP[0].transform.position;
+    private void pbSpawnClientRpc(int id,int index){
+        pb[id].transform.position = pbSP[index].transform.position;
         
         pb[id].GetComponent<AICharacterControl>().enabled = true;
         pb[id].GetComponent<NavMeshAgent>().enabled = true;
