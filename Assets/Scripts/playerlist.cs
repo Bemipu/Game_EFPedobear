@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class playerlist : MonoBehaviour
+using MLAPI;
+public class playerlist : NetworkBehaviour
 {
     public int playermax;
     public List<GameObject> plistGO = new List<GameObject>();
@@ -22,8 +22,10 @@ public class playerlist : MonoBehaviour
         playermax++;
         Debug.Log("player " + playermax+" joined.");
         plistGO.Add(camera);
-
+        
+        
         lastplayer = plistGO[playermax-1];
+        
 
         return playermax;
     }

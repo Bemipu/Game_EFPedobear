@@ -5,13 +5,13 @@ using MLAPI;
 
 public class SpriteFacing : NetworkBehaviour
 {
-    public GameObject source;
     private Transform cam_pos;
     public GameObject target = null;
 
     void Start(){
         cam_pos = new GameObject().transform;
         target = null;
+        //if(IsServer)target = GameObject.Find("MainCamera");
     }
 
     void Update()
@@ -21,8 +21,8 @@ public class SpriteFacing : NetworkBehaviour
             cam_pos.position = new Vector3(target.transform.position.x,transform.position.y,target.transform.position.z);
             transform.LookAt(cam_pos);
         }else{
-            if(source.GetComponent<playerlist>().lastplayer != null){
-                target = source.GetComponent<playerlist>().lastplayer;
+            if(GameObject.Find("GameManager").GetComponent<playerlist>().lastplayer != null){
+                target = GameObject.Find("GameManager").GetComponent<playerlist>().lastplayer;
             }
         }
     }

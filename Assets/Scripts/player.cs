@@ -9,7 +9,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myID = GameObject.Find("PlaylistGO").GetComponent<playerlist>().join(camera);
+        myID = GameObject.Find("GameManager").GetComponent<playerlist>().join(camera);
     }
 
     // Update is called once per frame

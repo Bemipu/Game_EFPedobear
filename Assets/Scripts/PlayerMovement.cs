@@ -78,6 +78,11 @@ public class PlayerMovement : NetworkBehaviour
         if (IsClient){
             MyInput();
             Look();
+
+            if(Input.GetKeyDown(KeyCode.Escape)){
+                Cursor.lockState = (Cursor.lockState==CursorLockMode.Locked)?CursorLockMode.None:CursorLockMode.Locked;
+                Cursor.visible = !Cursor.visible;
+            }
         }
     }
 
