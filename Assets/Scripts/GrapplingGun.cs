@@ -44,7 +44,7 @@ public class GrapplingGun : NetworkBehaviour
 
         if (isGrappling && IsLocalPlayer){
             player_rb.AddForce(this.transform.forward * Time.deltaTime * 1000);
-            player_rb.AddForce(camera.forward * Time.deltaTime * 0.5f);
+            player_rb.AddForce(camera.forward * Time.deltaTime * 1f);
         }
         
         if(IsLocalPlayer){

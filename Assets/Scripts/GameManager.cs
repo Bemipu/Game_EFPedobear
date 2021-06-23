@@ -13,7 +13,7 @@ public class GameManager : NetworkBehaviour
     public List<Transform> pbSP;
     public List<GameObject> pb;
     private bool begin;
-    private float gameRoundTimer,respawnTimer;
+    private float gameRoundTimer,respawnTimer,speedUpTimer;
     private int livePlayer;
     private int pbSpawned;
     private List<bool> alive;
@@ -42,11 +42,13 @@ public class GameManager : NetworkBehaviour
             if(begin){
                 gameRoundTimer += Time.deltaTime;
                 respawnTimer += Time.deltaTime;
+                speedUpTimer += Time.deltaTime;
                 if(livePlayer <=1){                 // end game
                     for(int i=0;i<10;i++){
                         pb[i].GetComponent<AICharacterControl>().enabled = false;
                         pb[i].GetComponent<NavMeshAgent>().enabled = false;
                         pb[i].transform.position = new Vector3(-4+i,-210,0);
+                        pb[i].GetComponent<ThirdPersonCharacter>().m_MoveSpeedMultiplier=1f;
                     }
                     begin = false;
                     int aliveID = 0;
@@ -54,7 +56,7 @@ public class GameManager : NetworkBehaviour
                         if(alive[i] == true)aliveID=i+1;
                     }
                     GameObject.Find("ConnectionUI").gameObject.GetComponent<Connection.Connection>().WinnerID.Value=aliveID;
-                    wipeout(aliveID-1);
+                    wipeout(aliveID);
                     
                 }
             }
@@ -63,6 +65,12 @@ public class GameManager : NetworkBehaviour
                 pbSpawn(pbSpawned);
                 pbSpawnClientRpc(pbSpawned);
                 pbSpawned++;
+            }
+            if(speedUpTimer > pbSpawnRate){
+                speedUpTimer = 0f;
+                for(int i=0;i<10;i++){
+                    pb[i].GetComponent<ThirdPersonCharacter>().m_MoveSpeedMultiplier+=0.1f;
+                }
             }
         }
     }
@@ -77,6 +85,7 @@ public class GameManager : NetworkBehaviour
         livePlayer = this.gameObject.GetComponent<playerlist>().playermax;
         gameRoundTimer = 0f;
         respawnTimer = 0f;
+        speedUpTimer = 0f;
         pbSpawned = 0;
         begin = true;
     }
